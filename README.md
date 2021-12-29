@@ -90,3 +90,4 @@
 - 매번 Connection을 연결해서 시간 손실 발생(3-Way handshake)
 - 패킷을 조금만 손실해도 재전송
 
+ 
