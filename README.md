@@ -15,9 +15,7 @@
 - Private Blockchain(프라이빗 블록체인) Similar to Hybrid P2P
 
 - Consortium Blockchain(컨소시움 블록체인) Similar to Super peer
-
-
-## 👩🏻‍🎓SOKET(소켓)
+## SOKET(소켓)
 소켓(Socket)이란 네트워크상에서 서버와 클라이언트 두개의 프로그램이 특정 포트를 통해 양방향 통신이 가능하도록 만들어주는 소프트웨어 장치이다.
 오늘날 컴퓨터 간 통신의 대부분은 인터넷 프로토콜을 기반으로 하고 있으므로, 대부분의 네트워크 소켓은 인터넷 소켓이다. 네트워크 통신을 위한 프로그램들은 소켓을 생성하고, 이 소켓을 통해서 서로 데이터를 교환한다. 소켓은 RFC 147에 기술사항이 정의되어 있다.
 
@@ -52,6 +50,24 @@
 - Error Detection(오류 감지)
 #### Segment(세그먼트) -TCP 프로토콜의 pdu
 - 프로토콜 안에서 처리되고 움직이는 데이터의 단위
-- 어ㅡ
-
-- 신뢰성 있는 데이터 통신을 가능하게 해주는 프로토콜
+- 데이터 받은것을 잘라서 TCP Header를 추가한것
+#### TCP Header
+- TCP 연결 제어 및 데이터 관리
+#### TCP의 3-Way handshake (Connection연결)
+- SYN.비트를 1로 설정해 패킷 송신
+- SYN.ACK비트를 1로 설정해 패킷 송신
+- ACK 비트를 1로 설정해 패킷 송진
+#### TCP의 데이터 전송 방식
+- 1.client가 패킷송신
+- 2.Server에서 Ack송신
+- 3.ACK 수신하지 못하면 재전송
+#### 4.way-handshake(Connection close)
+- 데이터를 전부 송신한 client가 FIN송신
+- Server가 ACK송신
+- Server에서 남은 패킷 송신(일정 시간 대기)
+- Server가 FIN송신
+- Client가 ACK송신
+#### TCP의 문제점
+- 전송의 신뢰성은 보장하지만..
+- 매번 Connection을 연결해서 시간 손실 발생(3-Way handshake)
+- 패킷을 조금만 손실해도 재전송
