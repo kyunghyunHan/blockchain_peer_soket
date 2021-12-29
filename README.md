@@ -98,4 +98,95 @@
 - 매번 Connection을 연결해서 시간 손실 발생(3-Way handshake)
 - 패킷을 조금만 손실해도 재전송
 
+### 웹소켓 (WebScoket)
+WebSocket은 ws 프로토콜을 기반으로 클라이언트와 서버 사이에 지속적인 완전 양방향 연결 스트림을 만들어 주는 기술입니다. 
+HTTP통신과 호환이 되며, 처음 접속시 http통신과 handshake가 이루어진다. handshake는 처음 접속 때 한번만 이루어진다.
+
+![991](https://user-images.githubusercontent.com/89236248/147659757-78b64663-c461-432e-ac01-6be43680cde3.png)
+
+
+### 웹소켓 (WebScoket)과 TCP/IP 소켓의 차이점은?
+- 웹 소켓은 HTTP 레이어에서 작동하는 소켓으로 TCP/IP 소켓의 레이어가 다르다. (RFC-6455)
+- IP, PORT를 통해서 통신한다는 점에서는 비슷하다.
+- 기존 HTTP 통신의 경우에는 단방향 통신으로 실시간 통신을 하기 위해서는 실시간처럼 보이는 방식을 사용한다.(Polling 방식)
+- 이후 실제로 실시간 양방향 통신이 가능한 웹 소켓은 2011년 국제 인터넷 표준화 기구(IETF)에서 RFC 6455로 표준화가 되었다.
+- 웹 소켓의 프로토콜 표시는 WS(WebSocket)과 WSS(WebSocket Secure)이 있다.
+- 웹소켓을 지원하지 않는 브라우저 등이 있기 있지만 현재는 거의 모든 벤더사에서 웹 소켓을 지원하고 있다.
+
+### 소켓 통신할때 필요한 주요함수
+
+1. socket(int domain, int type, int protocol)
+소켓을 만드는데 바로 이 함수를 사용합니다. 소켓 역시 파일로 다루어지기 때문에 반환값은 파일디스크립터입니다. 만약 소켓을 여는데 실패했다면 -1을 리턴합니다.
+
+2. connect(int fd, struct sockaddr *remote_host, socklen_t addr_length)
+원격 호스트(원격 컴퓨터)와 연결하는 함수입니다. 연결된 정보는 remote_host에 저장됩니다. 성공시 0, 오류시 -1을 반환합니다.
+
+3. bind(int fd, struct sockaddr *local_addr, socklen_t addr_length)
+소켓을 바인딩합니다. 이렇게 생각하면 됩니다. 지금 fd로 넘겨지는 소켓과 이 프로세스와 묶는다(bind)라고 생각하시면 됩니다. 그래서 해당 프로세스는 소켓을 통해 다른 컴퓨터로부터 연결을 받아들일 수 있습니다.
+
+4. listen(int fd, int backlog_queue_size)
+ 소켓을 통해 들어오는 연결을 듣습니다. backlog_queue_size만큼 연결 요청을 큐에 넣습니다. 성공시 0, 오류시 -1을 반환합니다.
+
+5. accept(int fd, sockaddr *remote_host, socklen_t *addr_length)
+어떤 컴퓨터에서 이 컴퓨터로 연결할때 연결을 받아들입니다. 함수 이름이 말해주고 있죠.
+연결된 원격 컴퓨터의 정보는 remote_host에 저장됩니다. 오류시에 -1을 반환합니다.
+
+6. send(int fd, void* buffer, size_t n, int flags)
+buffer를 소켓 파일 디스크립터인 fd로 전송합니다. 보낸 바이트수를 반환하며 실패시 -1을 반환합니다.
+
+7. recv(int fd, void* buffer, size_t n, int flags)
+send함수와 사용법이 거의 비슷합니다. n바이트를 buffer로 읽습니다. 성공시 받은 바이트수를 반환하며 실패시 -1을 반환합니다.
+웹소켓의 통신 TCP 80포트 를 사용하면서 HTTP 프로토콜과 호환되며, 웹브라우저와 서버간 통신을 가능하게 해준다.
+
+### 웹소켓 서버 만들기
+
+//server.js
+const WebSocket = require('ws');
+
+const ws = new WebSocket.Server({ port: 8080 });
+
+console.log("Server Started");
+
+
+ws.on('connection', (wss) => {
+
+  console.log("A new Client Connected")
+
+  wss.send('Welcome to the Server!');
+
+
+  wss.on('message', (message) => {
+
+    console.log(`Server Received: ${message}`);
+
+
+    wss.send('Got your Message: ' + message);
+
+  });
+
+});
+
+//client.js
+const socket = new WebSocket('ws://localhost:8080');
+
+socket.addEventListener('open', () => {
+
+    console.log('Connected to the Server!');
+
+});
+
+
+socket.addEventListener('message', (msg) => {
+
+    console.log(`Client Received: ${msg.data}`);
+
+});
+
+
+const sendMsg = () => {
+
+    socket.send('메세지입력');
+}
+
+
  
