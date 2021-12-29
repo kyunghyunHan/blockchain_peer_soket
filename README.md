@@ -45,6 +45,10 @@
 - Error Detection
 - 비교적 데이터의 신뢰성이 중요하지 않을 떄 사용(ex 영상 스트리밍)
 
+#### User Datagram - UDP 프로토콜의 PDU
+- 데이터에 UDP헤더 추가
+- TCP처럼 데이터를 쪼개지 않음
+
 ### ⁉️TCP 프로토콜
 - 신뢰성 있는 데이터 통신을 가능하게 해주는 프로토콜
 - 특징: Connection 연결(3 way-handshake)-양방향 통신
@@ -52,26 +56,26 @@
 - Flow Control(흐름제어)
 - Congention Control (혼잡제어)
 - Error Detection(오류 감지)
-#### Segment(세그먼트) -TCP 프로토콜의 pdu
+#### ⓵Segment(세그먼트) -TCP 프로토콜의 pdu
 - 프로토콜 안에서 처리되고 움직이는 데이터의 단위
 - 데이터 받은것을 잘라서 TCP Header를 추가한것
-#### TCP Header
+#### ②TCP Header
 - TCP 연결 제어 및 데이터 관리
-#### TCP의 3-Way handshake (Connection연결)
+#### ③TCP의 3-Way handshake (Connection연결)
 - SYN.비트를 1로 설정해 패킷 송신
 - SYN.ACK비트를 1로 설정해 패킷 송신
 - ACK 비트를 1로 설정해 패킷 송진
-#### TCP의 데이터 전송 방식
+#### ④TCP의 데이터 전송 방식
 - 1.client가 패킷송신
 - 2.Server에서 Ack송신
 - 3.ACK 수신하지 못하면 재전송
-#### 4.way-handshake(Connection close)
+#### ⑤4.way-handshake(Connection close)
 - 데이터를 전부 송신한 client가 FIN송신
 - Server가 ACK송신
 - Server에서 남은 패킷 송신(일정 시간 대기)
 - Server가 FIN송신
 - Client가 ACK송신
-#### TCP의 문제점
+#### ‼️😅TCP의 문제점
 - 전송의 신뢰성은 보장하지만..
 - 매번 Connection을 연결해서 시간 손실 발생(3-Way handshake)
 - 패킷을 조금만 손실해도 재전송
