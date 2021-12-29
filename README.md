@@ -15,6 +15,14 @@
 - Private Blockchain(프라이빗 블록체인) Similar to Hybrid P2P
 
 - Consortium Blockchain(컨소시움 블록체인) Similar to Super peer
+
+
+### P2P 의 장점
+### P2P 의 단점
+### Public Blockchain(퍼블릭 블록체인) Similar to Pure P2P
+### Private Blockchain(프라이빗 블록체인) Similar to Hybrid P2P
+### Consortium Blockchain(컨소시움 블록체인) Similar to Super peer
+
 ## SOKET(소켓)
 소켓(Socket)이란 네트워크상에서 서버와 클라이언트 두개의 프로그램이 특정 포트를 통해 양방향 통신이 가능하도록 만들어주는 소프트웨어 장치이다.
 오늘날 컴퓨터 간 통신의 대부분은 인터넷 프로토콜을 기반으로 하고 있으므로, 대부분의 네트워크 소켓은 인터넷 소켓이다. 네트워크 통신을 위한 프로그램들은 소켓을 생성하고, 이 소켓을 통해서 서로 데이터를 교환한다. 소켓은 RFC 147에 기술사항이 정의되어 있다.
