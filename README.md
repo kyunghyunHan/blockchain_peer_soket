@@ -140,6 +140,7 @@ send함수와 사용법이 거의 비슷합니다. n바이트를 buffer로 읽�
 
 ### ⁉️웹소켓 서버 만들기
 
+```
 //server.js
 const WebSocket = require('ws');
 
@@ -165,7 +166,9 @@ ws.on('connection', (wss) => {
   });
 
 });
+```
 
+```
 //client.js
 const socket = new WebSocket('ws://localhost:8080');
 
@@ -187,6 +190,7 @@ const sendMsg = () => {
 
     socket.send('메세지입력');
 }
+```
 
 
  
