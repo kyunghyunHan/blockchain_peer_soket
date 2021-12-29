@@ -39,7 +39,7 @@
 - 장점:많은 사람들이 함께 참여하기 때문에 투명성이 강화된 모델이며, 많은 사람들이 네트워크에 참여할 수록 보안이 강화되어 있습니다.
 - 단점: 많은 사람들에 의해 합의가 진행되고 전체 네트워크에 전파하여 동기화 해야하기 때문에 속도가 느리다는 단점이 있습니다. 또한, 참여가 자유롭기 때문에 인증 안된 참여자들도 악의적인 목적을 가진 해커도 퍼블릭 블록체인에 접근이 가능합니다.
 - 대표적인 블록체인 : 비트코인, 이더리움, 비트코인캐시, 모네로 등
-- 대표적인 합의 알고리즘 : POW(Proof of Work, 작업증명) POS(Proof of Stake, 지분증명) DPOS(Delegated Proof of Stake 위임지분증명) 등
+- 대표적인 합의 알고리즘 : POW(Proof of Work, 작업증명) POS(Proof of Stake, 지분증명) DPOS(Delegated Proof of Stake 위임지분증명) 등   
 ![1_eWhzhPnLulY94kEeiIGnsQ](https://user-images.githubusercontent.com/88940298/147662132-f8a06140-4559-4a06-b629-56b02b5a84ec.png)
 
 ### Private Blockchain(프라이빗 블록체인) Similar to Hybrid P2P
@@ -49,7 +49,7 @@
 - 대표적인 블록체인 : Hyper ledger fabric, R3 CORDA 등
 - 대표적인 합의 알고리즘 : PBFT(Practical byzantine fault tolerance) 등
 - 완전한 프라이빗 블록체인(Fully private blockchain): 하나의 기관 또는 기업 아래서 사용되는 블록체인, 데이터 관리와 검증, 거래내역에 접근하기 위해서는 중앙기관에서 허가를 받아야 가능합니다. 블록체인 기술을 사용하지만 중앙이 힘을 가지고 있고, 그저 분산된 데이터베이스만 갖는 구조로서 현재 전통의 시스템에 블록체인의 보안 검증성의 특징만 가져옵니다.
-- 컨소시움 블록체인(consortium blockchain):여러 기관 또는 기업이 하나의 그룹을 이뤄 블록체인 네트워크를 구성하는 구조를 가지고 있습니다. 퍼블릭 프라이빗 블록체인의 성격을 모두 가질 수 있으며, 노드에도 특정 역할을 부여할 수 있는 통제권을 가진 블록체인 네트워크입니다.
+- 컨소시움 블록체인(consortium blockchain):여러 기관 또는 기업이 하나의 그룹을 이뤄 블록체인 네트워크를 구성하는 구조를 가지고 있습니다. 퍼블릭 프라이빗 블록체인의 성격을 모두 가질 수 있으며, 노드에도 특정 역할을 부여할 수 있는 통제권을 가진 블록체인 네트워크입니다.   
 ![1_Hkm9ZXiqcgE2tRcEFw8qkA](https://user-images.githubusercontent.com/88940298/147662331-ef5ea20d-e250-4bd6-8d79-51cf6b6dcfdd.png)
 #### 프라이빗 블록체인 활용 사례
 - 월마트(wallmart) : 실재료의 생산과 유통 과정 전체에 프라이빗 블록체인 기술을 적용하여 실시간으로 위생 상태를 점검할 수 있는 데이터 저장 방식을 도입
