@@ -39,13 +39,13 @@
 - Congention(혼잡문제) 원인 : 네트워크의 데이터 처리 속도 (ex.라우터),Network가 혼잡할떄
 - 결과적으로 데이터의 손실이 발생 !!
 
-###  UDP 프로토콜
+###  ⁉️UDP 프로토콜
 - TCP보다 신뢰성이 떨어지지만 전송속도가 일반적으로 빠른 프로토콜(순차전송x,흐름제어x,혼잡제어x)
 - Connectionless (3 way-handshake x)
 - Error Detection
 - 비교적 데이터의 신뢰성이 중요하지 않을 떄 사용(ex 영상 스트리밍)
 
-#### TCP 프로토콜
+### ⁉️TCP 프로토콜
 - 신뢰성 있는 데이터 통신을 가능하게 해주는 프로토콜
 - 특징: Connection 연결(3 way-handshake)-양방향 통신
 - 데이터의 순차 전송을 보장
